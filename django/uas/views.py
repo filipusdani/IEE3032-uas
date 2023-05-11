@@ -15,7 +15,9 @@ def home(req):
     return render(req, "index.html", context)
 
 def api(req):
-    hitung_ml()
+    np_chart = (list((Aktuator13.objects.all())))[190:]
+    np_chart_value = ([o.value for o in np_chart])
+    np_chart_labels = ([str(o.date_created)[11:19] for o in np_chart])
     data = {
         "Sensor1": serialize("json", list(reversed(Sensor1.objects.all()))),
         "Sensor2": serialize("json", list(reversed(Sensor2.objects.all()))),
@@ -56,8 +58,11 @@ def api(req):
         "Aktuator10": list(reversed(Aktuator10.objects.all()))[0].value,
         "Aktuator11": list(reversed(Aktuator11.objects.all()))[0].value,
         "Aktuator12": list(reversed(Aktuator12.objects.all()))[0].value,
-        "Aktuator13": list(reversed(Aktuator13.objects.all()))[0].value,  
-    }
+        "Aktuator13": list(reversed(Aktuator13.objects.all()))[0].value,
+        "np_chart_value": np_chart_value,
+        "np_chart_labels": np_chart_labels,
+    }    
+    hitung_ml()
     return JsonResponse(data)
 
 def hitung_ml():

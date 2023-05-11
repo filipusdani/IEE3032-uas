@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="{% static 'style.css' %}" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     
     <body>
@@ -155,13 +156,20 @@
                 <h2>Output Nilai Pabrik</h2>
                 <p><span id="Aktuator13"></span></p>
             </div>
-        </div>      
+        </div>
+
+        <div class="container">
+            <div class="bigbox">
+                <h2>Sejarah Nilai Pabrik</h2>
+                <canvas id="np_chart", width="400", height="200"></canvas>
+            </div>
+        </div>
    
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
         <script>
-            function updateView(message) {
+            var np_chart_value
+            var np_chart_labels
 
+            function updateView(message) {
                 const Sensor1 = JSON.parse(
                     message["Sensor1"]
                     );
@@ -364,6 +372,12 @@
                     );
                 document.querySelector("#Aktuator13").innerHTML =
                     Aktuator13;
+                np_chart_value = (
+                    message["np_chart_value"]
+                    );
+                np_chart_labels = (
+                    message["np_chart_labels"]
+                    );
             }
 
             function getData() {
@@ -374,6 +388,9 @@
 
             setInterval(function () {
                 const e = getData();
+                np_chart.data.labels = np_chart_labels;
+                np_chart.data.datasets[0].data = np_chart_value;
+                np_chart.update();
             }, 2000);
 
             Number.prototype.pad = function (size) {
@@ -383,6 +400,38 @@
                 }
                 return s;
             };
+
+            var np_chart_ctx = document.getElementById("np_chart");
+            var np_chart = new Chart(np_chart_ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Nilai Pabrik',
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: [],
+                    }]
+                },
+                options: {
+                    elements: {
+                        line: {
+                        tension: 0
+                        }
+                    },
+                    animations: {
+                    tension: {
+                        duration: 0,
+                    }
+                    },
+                    scales: {
+                        y: {
+                            min: -100,
+                            max: 150
+                        }
+                    }
+                }
+            });
         </script>
     </body>
 </html>
