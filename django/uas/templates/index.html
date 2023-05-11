@@ -1,0 +1,388 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}" />
+    </head>
+    
+    <body>
+
+        <h1 class="mainTitle">PRAUAS</h1>
+        <h2 class="mainTitle">Filipus Dani - 202000135</h2>
+        <div class="container">
+            <!-- =============================================================================================== -->
+            <div class="bigbox">
+                <h1>#1 Pabrik Smart Farm</h1>
+                <div class="mediumbox">
+                    <div class="smallbox">
+                        <h1>Subsistem Susu dan Telur</h1>
+                        <h2>Sensor Temperature</h2>
+                        <p><span id="Sensor1"></span>&deg;C</p>
+                        <h2>Sensor Conductivity</h2>
+                        <p><span id="Sensor2"></span> mS/cm</p>
+                        <h2>Sensor Flow Susu</h2>
+                        <p><span id="Sensor3"></span> L/min</p>
+                        <hr class="smallboxhr">
+                        <h2>Aktuator Milking Machine</h2>
+                        <p><span id="Aktuator1"></span> mm/s</p>
+                    </div>
+                    <div class="smallbox">
+                        <h1>Subsistem Daging Merah</h1>
+                        <h2>Sensor CO</h2>
+                        <p><span id="Sensor4"></span> ppm</p>
+                        <h2>Sensor Amonia</h2>
+                        <p><span id="Sensor5"></span> ppm</p>
+                        <h2>Sensor Pressure</h2>
+                        <p><span id="Sensor6"></span> kPa</p>
+                        <hr class="smallboxhr">
+                        <h2>Aktuator Slaughter Machine</h2>
+                        <p><span id="Aktuator2"></span> rad/s</p>
+                    </div>
+                    <div class="smallbox">
+                        <h1>Subsistem Daging Putih</h1>
+                        <h2>Sensor O2</h2>
+                        <p><span id="Sensor7"></span>%</p>
+                        <h2>Sensor CO2</h2>
+                        <p><span id="Sensor8"></span> ppm</p>
+                        <h2>Sensor Water Level</h2>
+                        <p><span id="Sensor9"></span> m</p>
+                        <hr class="smallboxhr">
+                        <h2>Aktuator Feeding Machine</h2>
+                        <p><span id="Aktuator3"></span> cm&#xB2;/s</p>
+                    </div>
+                </div>
+                <h2>Output Produk</h2>
+                <p><span id="Aktuator10"></span> produk/hari</p>
+            </div>
+            <!-- =============================================================================================== -->
+            <div class="bigbox">
+                <h1>#2 Pabrik Smart Plantation</h1>
+                <div class="mediumbox">
+                    <div class="smallbox">
+                        <h1>Subsistem Sumber Karbohidrat</h1>
+                        <h2>Sensor Soil Moisture</h2>
+                        <p><span id="Sensor10"></span>%</p>
+                        <h2>Sensor pH</h2>
+                        <p><span id="Sensor11"></span></p>
+                        <h2>Sensor Sunlight</h2>
+                        <p><span id="Sensor12"></span> lux</p>
+                        <hr class="smallboxhr">
+                        <h2>Aktuator Output gramasi karbohidrat</h2>
+                        <p><span id="Aktuator4"></span> gr/s</p>
+                    </div>
+                    <div class="smallbox">
+                        <h1>Subsistem Sayuran</h1>
+                        <h2>Sensor Humidity</h2>
+                        <p><span id="Sensor13"></span>%</p>
+                        <h2>Sensor Anemometer</h2>
+                        <p><span id="Sensor14"></span> m/s</p>
+                        <h2>Sensor UV</h2>
+                        <p><span id="Sensor15"></span> mW/cm&#xB2;</p>
+                        <hr class="smallboxhr">
+                        <h2>Aktuator Sprayer</h2>
+                        <p><span id="Aktuator5"></span> cm&#xB3;/s</p>
+                    </div>
+                    <div class="smallbox">
+                        <h1>Subsistem Buah-Buahan</h1>
+                        <h2>Sensor Radiation</h2>
+                        <p><span id="Sensor16"></span> W/m&#xB2;</p>
+                        <h2>Sensor Berat Buah</h2>
+                        <p><span id="Sensor17"></span> kg</p>
+                        <h2>Sensor Color Hue</h2>
+                        <p><span id="Sensor18"></span>&deg;</p>
+                        <hr class="smallboxhr">
+                        <h2>Aktuator Pemberi pupuk</h2>
+                        <p><span id="Aktuator6"></span> kg</p>
+                    </div>
+                </div>
+                <h2>Hasil Tanam</h2>
+                <p><span id="Aktuator11"></span> ton/bulan</p>
+            </div>
+            <!-- =============================================================================================== -->
+            <div class="bigbox">
+                <h1>#3 Pabrik Smart Restaurant</h1>
+                <div class="mediumbox">
+                    <div class="smallbox">
+                        <h1>Subsistem Deteksi Musim</h1>
+                        <h2>Sensor Barometer</h2>
+                        <p><span id="Sensor19"></span> kPa</p>
+                        <h2>Sensor Wind</h2>
+                        <p><span id="Sensor20"></span>&deg;</p>
+                        <h2>Sensor Visibility</h2>
+                        <p><span id="Sensor21"></span> km</p>
+                        <hr class="smallboxhr">
+                        <h2>Aktuator AC</h2>
+                        <p><span id="Aktuator7"></span>&deg;C</p>
+                    </div>
+                    <div class="smallbox">
+                        <h1>Subsistem Deteksi Penjualan</h1>
+                        <h2>Sensor Stock</h2>
+                        <p><span id="Sensor22"></span>%</p>
+                        <h2>Sensor Sellingrate</h2>
+                        <p><span id="Sensor23"></span> item/day</p>
+                        <h2>Sensor Satisfaction</h2>
+                        <p><span id="Sensor24"></span></p>
+                        <hr class="smallboxhr">
+                        <h2>Aktuator Diskon</h2>
+                        <p><span id="Aktuator8"></span>%</p>
+                    </div>
+                    <div class="smallbox">
+                        <h1>Subsistem Pengunjung Restoran</h1>
+                        <h2>Sensor Occupancy</h2>
+                        <p><span id="Sensor25"></span>%</p>
+                        <h2>Sensor Audio</h2>
+                        <p><span id="Sensor26"></span> dB</p>
+                        <h2>Sensor Sentimen</h2>
+                        <p><span id="Sensor27"></span>%</p>
+                        <hr class="smallboxhr">
+                        <h2>Aktuator Petunjuk Jumlah Kursi</h2>
+                        <p><span id="Aktuator9"></span></p>
+                    </div>
+                </div>
+                <h2>Proyeksi Keuntungan</h2>
+                <p><span id="Aktuator12"></span> jt/bulan</p>
+            </div>
+            <!-- =============================================================================================== -->
+        </div>
+        
+        <div class="container">
+            <div class="bigbox">
+                <h2>Output Nilai Pabrik</h2>
+                <p><span id="Aktuator13"></span></p>
+            </div>
+        </div>      
+   
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+            function updateView(message) {
+
+                const Sensor1 = JSON.parse(
+                    message["Sensor1"]
+                    );
+                document.querySelector("#Sensor1").innerHTML =
+                    Sensor1[0].fields.value;
+                const Sensor2 = JSON.parse(
+                    message["Sensor2"]
+                    );
+                document.querySelector("#Sensor2").innerHTML =
+                    Sensor2[0].fields.value;
+                const Sensor3 = JSON.parse(
+                    message["Sensor3"]
+                    );
+                document.querySelector("#Sensor3").innerHTML =
+                    Sensor3[0].fields.value;
+                const Sensor4 = JSON.parse(
+                    message["Sensor4"]
+                    );
+                document.querySelector("#Sensor4").innerHTML =
+                    Sensor4[0].fields.value;
+                const Sensor5 = JSON.parse(
+                    message["Sensor5"]
+                    );
+                document.querySelector("#Sensor5").innerHTML =
+                    Sensor5[0].fields.value;
+                const Sensor6 = JSON.parse(
+                    message["Sensor6"]
+                    );
+                document.querySelector("#Sensor6").innerHTML =
+                    Sensor6[0].fields.value;
+                const Sensor7 = JSON.parse(
+                    message["Sensor7"]
+                    );
+                document.querySelector("#Sensor7").innerHTML =
+                    Sensor7[0].fields.value;
+                const Sensor8 = JSON.parse(
+                    message["Sensor8"]
+                    );
+                document.querySelector("#Sensor8").innerHTML =
+                    Sensor8[0].fields.value;
+                const Sensor9 = JSON.parse(
+                    message["Sensor9"]
+                    );
+                document.querySelector("#Sensor9").innerHTML =
+                    Sensor9[0].fields.value;
+                const Sensor10 = JSON.parse(
+                    message["Sensor10"]
+                    );
+                document.querySelector("#Sensor10").innerHTML =
+                    Sensor10[0].fields.value;
+                const Sensor11 = JSON.parse(
+                    message["Sensor11"]
+                    );
+                document.querySelector("#Sensor11").innerHTML =
+                    Sensor11[0].fields.value;
+                const Sensor12 = JSON.parse(
+                    message["Sensor12"]
+                    );
+                document.querySelector("#Sensor12").innerHTML =
+                    Sensor12[0].fields.value;
+                const Sensor13 = JSON.parse(
+                    message["Sensor13"]
+                    );
+                document.querySelector("#Sensor13").innerHTML =
+                    Sensor13[0].fields.value;
+                const Sensor14 = JSON.parse(
+                    message["Sensor14"]
+                    );
+                document.querySelector("#Sensor14").innerHTML =
+                    Sensor14[0].fields.value;
+                const Sensor15 = JSON.parse(
+                    message["Sensor15"]
+                    );
+                document.querySelector("#Sensor15").innerHTML =
+                    Sensor15[0].fields.value;
+                const Sensor16 = JSON.parse(
+                    message["Sensor16"]
+                    );
+                document.querySelector("#Sensor16").innerHTML =
+                    Sensor16[0].fields.value;
+                const Sensor17 = JSON.parse(
+                    message["Sensor17"]
+                    );
+                document.querySelector("#Sensor17").innerHTML =
+                    Sensor17[0].fields.value;
+                const Sensor18 = JSON.parse(
+                    message["Sensor18"]
+                    );
+                document.querySelector("#Sensor18").innerHTML =
+                    Sensor18[0].fields.value;
+                const Sensor19 = JSON.parse(
+                    message["Sensor19"]
+                    );
+                document.querySelector("#Sensor19").innerHTML =
+                    Sensor19[0].fields.value;
+                const Sensor20 = JSON.parse(
+                    message["Sensor20"]
+                    );
+                document.querySelector("#Sensor20").innerHTML =
+                    Sensor20[0].fields.value;
+                const Sensor21 = JSON.parse(
+                    message["Sensor21"]
+                    );
+                document.querySelector("#Sensor21").innerHTML =
+                    Sensor21[0].fields.value;
+                const Sensor22 = JSON.parse(
+                    message["Sensor22"]
+                    );
+                document.querySelector("#Sensor22").innerHTML =
+                    Sensor22[0].fields.value;
+                const Sensor23 = JSON.parse(
+                    message["Sensor23"]
+                    );
+                document.querySelector("#Sensor23").innerHTML =
+                    Sensor23[0].fields.value;
+                const Sensor24 = JSON.parse(
+                    message["Sensor24"]
+                    );
+                document.querySelector("#Sensor24").innerHTML =
+                    Sensor24[0].fields.value;
+                const Sensor25 = JSON.parse(
+                    message["Sensor25"]
+                    );
+                document.querySelector("#Sensor25").innerHTML =
+                    Sensor25[0].fields.value;
+                const Sensor26 = JSON.parse(
+                    message["Sensor26"]
+                    );
+                document.querySelector("#Sensor26").innerHTML =
+                    Sensor26[0].fields.value;
+                const Sensor27 = JSON.parse(
+                    message["Sensor27"]
+                    );
+                document.querySelector("#Sensor27").innerHTML =
+                    Sensor27[0].fields.value;
+
+                const Aktuator1 = (
+                    message["Aktuator1"]
+                    );
+                document.querySelector("#Aktuator1").innerHTML =
+                    Aktuator1;
+                const Aktuator2 = (
+                    message["Aktuator2"]
+                    );
+                document.querySelector("#Aktuator2").innerHTML =
+                    Aktuator2;
+                const Aktuator3 = (
+                    message["Aktuator3"]
+                    );
+                document.querySelector("#Aktuator3").innerHTML =
+                    Aktuator3;
+                const Aktuator4 = (
+                    message["Aktuator4"]
+                    );
+                document.querySelector("#Aktuator4").innerHTML =
+                    Aktuator4;
+                const Aktuator5 = (
+                    message["Aktuator5"]
+                    );
+                document.querySelector("#Aktuator5").innerHTML =
+                    Aktuator5;
+                const Aktuator6 = (
+                    message["Aktuator6"]
+                    );
+                document.querySelector("#Aktuator6").innerHTML =
+                    Aktuator6;
+                const Aktuator7 = (
+                    message["Aktuator7"]
+                    );
+                document.querySelector("#Aktuator7").innerHTML =
+                    Aktuator7;
+                const Aktuator8 = (
+                    message["Aktuator8"]
+                    );
+                document.querySelector("#Aktuator8").innerHTML =
+                    Aktuator8;
+                const Aktuator9 = (
+                    message["Aktuator9"]
+                    );
+                document.querySelector("#Aktuator9").innerHTML =
+                    Aktuator9;
+
+                const Aktuator10 = (
+                    message["Aktuator10"]
+                    );
+                document.querySelector("#Aktuator10").innerHTML =
+                    Aktuator10;
+                const Aktuator11 = (
+                    message["Aktuator11"]
+                    );
+                document.querySelector("#Aktuator11").innerHTML =
+                    Aktuator11;
+                const Aktuator12 = (
+                    message["Aktuator12"]
+                    );
+                document.querySelector("#Aktuator12").innerHTML =
+                    Aktuator12;
+                const Aktuator13 = (
+                    message["Aktuator13"]
+                    );
+                document.querySelector("#Aktuator13").innerHTML =
+                    Aktuator13;
+            }
+
+            function getData() {
+                fetch(`http://${window.location.host}/uas/api/sensor/`)
+                    .then((res) => res.json())
+                    .then((data) => updateView(data));
+            }
+
+            setInterval(function () {
+                const e = getData();
+            }, 2000);
+
+            Number.prototype.pad = function (size) {
+                var s = String(this);
+                while (s.length < (size || 2)) {
+                    s = "0" + s;
+                }
+                return s;
+            };
+        </script>
+    </body>
+</html>
