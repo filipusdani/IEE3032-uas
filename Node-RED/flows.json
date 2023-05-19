@@ -1,0 +1,365 @@
+[
+    {
+        "id": "b9bfe0c1f6d06163",
+        "type": "tab",
+        "label": "UAS PBW",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "02ecd88cea0c3cc2",
+        "type": "inject",
+        "z": "b9bfe0c1f6d06163",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 270,
+        "y": 1000,
+        "wires": [
+            [
+                "7bc93d9f61058424",
+                "900dc12fd113e020",
+                "b61e7f8b22393431"
+            ]
+        ]
+    },
+    {
+        "id": "7bc93d9f61058424",
+        "type": "random",
+        "z": "b9bfe0c1f6d06163",
+        "name": "Sensor Kelembaban",
+        "low": "0",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 520,
+        "y": 920,
+        "wires": [
+            [
+                "e601cd8682915727",
+                "88a509d3b02f7221"
+            ]
+        ]
+    },
+    {
+        "id": "900dc12fd113e020",
+        "type": "random",
+        "z": "b9bfe0c1f6d06163",
+        "name": "Sensor Temperatur",
+        "low": "-10",
+        "high": "50",
+        "inte": "true",
+        "property": "payload",
+        "x": 510,
+        "y": 1000,
+        "wires": [
+            [
+                "1c9d0ce123ba457c",
+                "1190e936796f57f5"
+            ]
+        ]
+    },
+    {
+        "id": "b61e7f8b22393431",
+        "type": "random",
+        "z": "b9bfe0c1f6d06163",
+        "name": "Sensor Sunlight",
+        "low": "0",
+        "high": "1000",
+        "inte": "true",
+        "property": "payload",
+        "x": 500,
+        "y": 1080,
+        "wires": [
+            [
+                "41274e1a786fb412",
+                "a4f366c9016b3c9a"
+            ]
+        ]
+    },
+    {
+        "id": "0727b4b93ef71c4c",
+        "type": "comment",
+        "z": "b9bfe0c1f6d06163",
+        "name": "Pabrik Smart Farm",
+        "info": "",
+        "x": 510,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "e601cd8682915727",
+        "type": "mqtt out",
+        "z": "b9bfe0c1f6d06163",
+        "name": "",
+        "topic": "uas/sensor1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 730,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "1c9d0ce123ba457c",
+        "type": "mqtt out",
+        "z": "b9bfe0c1f6d06163",
+        "name": "",
+        "topic": "uas/sensor2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 730,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "41274e1a786fb412",
+        "type": "mqtt out",
+        "z": "b9bfe0c1f6d06163",
+        "name": "",
+        "topic": "uas/sensor3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "727660ac399984c1",
+        "x": 730,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "88a509d3b02f7221",
+        "type": "ui_gauge",
+        "z": "b9bfe0c1f6d06163",
+        "name": "",
+        "group": "190a1101abb49887",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Kelembaban",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 760,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "1190e936796f57f5",
+        "type": "ui_gauge",
+        "z": "b9bfe0c1f6d06163",
+        "name": "",
+        "group": "190a1101abb49887",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Temperatur",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 750,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "a4f366c9016b3c9a",
+        "type": "ui_gauge",
+        "z": "b9bfe0c1f6d06163",
+        "name": "",
+        "group": "190a1101abb49887",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Sunlight",
+        "label": "lux",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 740,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "b85a8f1e3b05b369",
+        "type": "mqtt in",
+        "z": "b9bfe0c1f6d06163",
+        "name": "",
+        "topic": "uas/sensor1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 490,
+        "y": 1180,
+        "wires": [
+            [
+                "4df0d871e25e997a"
+            ]
+        ]
+    },
+    {
+        "id": "75513355bac972f4",
+        "type": "mqtt in",
+        "z": "b9bfe0c1f6d06163",
+        "name": "",
+        "topic": "uas/sensor2",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 490,
+        "y": 1220,
+        "wires": [
+            [
+                "4df0d871e25e997a"
+            ]
+        ]
+    },
+    {
+        "id": "ed537def929ca0e4",
+        "type": "mqtt in",
+        "z": "b9bfe0c1f6d06163",
+        "name": "",
+        "topic": "uas/sensor3",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "727660ac399984c1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 490,
+        "y": 1260,
+        "wires": [
+            [
+                "4df0d871e25e997a"
+            ]
+        ]
+    },
+    {
+        "id": "4df0d871e25e997a",
+        "type": "debug",
+        "z": "b9bfe0c1f6d06163",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "727660ac399984c1",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "190a1101abb49887",
+        "type": "ui_group",
+        "name": "Smart Farm",
+        "tab": "9690de8435bbd37e",
+        "order": 14,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9690de8435bbd37e",
+        "type": "ui_tab",
+        "name": "UAS",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

@@ -1,4 +1,4 @@
-* {
+ * {
     margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -25,7 +25,7 @@ h2.mainTitle {
     align-items: center;
 }
 .bigbox {
-    width: 33%;
+    width: 80%;
     margin: 10px;
     padding: 10px;
     border-radius: 20px;
@@ -48,9 +48,6 @@ h2.mainTitle {
     transition: all 400ms;
     background-color: #2a2d3e;
 }
-.smallbox p {
-    font-size: 10px;
-}
 .smallbox h1 {
     font-size: 15px;
     margin-bottom: 15px;
@@ -61,8 +58,10 @@ h2.mainTitle {
     margin: 10px 0 0;
     margin-bottom: 5px;
 }
-.smallboxhr {
-    margin-top: 10px;
+.smallbox h3 {
+    font-size: 15px;
+    margin-bottom: 20px;
+    height: 50px;
 }
 .longbox {
     width: 100%;
